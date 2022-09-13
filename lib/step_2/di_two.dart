@@ -3,14 +3,14 @@ import 'package:get_it/get_it.dart';
 
 class DiInit2 {
   void init() {
-    configureDependencies();
-    // final getIt = GetIt.instance;
-    // getIt.registerSingleton(DataSource1());
-    // getIt.registerSingleton(DataSource2());
-    // getIt.registerSingleton<Repository1>(Repository1Impl(
-    //   dataSource1: getIt.get(),
-    //   dataSource2: getIt.get(),
-    // ));
+    // configureDependencies();
+    final getIt = GetIt.instance;
+    getIt.registerSingleton(DataSource1());
+    getIt.registerSingleton(DataSource2());
+    getIt.registerSingleton<Repository1>(Repository1Impl(
+      dataSource1: getIt.get(),
+      dataSource2: getIt.get(),
+    ));
   }
 
   void deInit() {
